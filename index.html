@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        const game = new Phaser.Game(config);
+
+        const referenceWord = "POSTER"; // The reference word
+        let guessedLetters = [];
+        let correctGuesses = 0;
+        let wrongGuesses = 0;
+
+        let wordText;
+        let rightGuessText;
+        let wrongGuessText;
+        let hangmanText;
+
+        function preload() {
+            // No assets to preload for now
+        }
+
+        function create() {
+            // Create the alphabet (A-Z) as clickable buttons
+            const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const buttonSpacing = 50;
+            let startX = 50;
+            let startY = 100;
+
+            // Loop through each letter to create the buttons
+            for (let i = 0; i < letters.length; i++) {
+                const letter = letters[i];
+                const button = this.add.text(startX + (i % 13) * buttonSpacing, startY + Math.floor(i / 13) * buttonSpacing, letter, {
+                    font: '32px Arial',
+                    fill: '#000',
+                    backgroundColor: '#ddd',
+                    padding: { left: 10, right: 10 }
+                })
+                .setInteractive() // Make the button clickable
+                .on('pointerover', () => button.setStyle({ backgroundColor: '#aaa' })) // Highlight on hover
+                .on('pointerout', () => button.setStyle({ backgroundColor: '#ddd' })) // Revert on hover out
+                .on('pointerdown', () => handleLetterClick(letter, button)); // Handle click
+            }
+
+            // Create text to display the word with underscores for unguessed letters
+            wordText = this.add.text(400, 300, getDisplayWord(), {
+                font: '32px Arial',
+                fill: '#ffffff'
+            }).setOrigin(0.5);
+
+            // Create text to display right and wrong guesses
+            rightGuessText = this.add.text(400, 350, "Right Guesses: 0", {
+                font: '24px Arial',
+                fill: '#00FF00'
+            }).setOrigin(0.5);
+            
+            wrongGuessText = this.add.text(400, 400, "Wrong Guesses: 0", {
+                font: '24px Arial',
+                fill: '#FF0000'
+            }).setOrigin(0.5);
+
+            // Create a simple placeholder for hangman drawing (we'll use text)
+            hangmanText = this.add.text(650, 100, "Hangman: \n\n\n\n", {
+                font: '32px Arial',
+                fill: '#FF0000'
+            });
+        }
+
+        function update() {
+            // No update logic needed for this step
+        }
+
+        // Handle the letter click event
+        function handleLetterClick(letter, button) {
+            if (guessedLetters.includes(letter)) return; // Ignore already guessed letters
+
+            guessedLetters.push(letter);
+            
+            if (referenceWord.includes(letter)) {
+                // Correct guess
+                correctGuesses++;
+                button.setText("✔"); // Display checkmark for correct guess
+                button.setStyle({ fill: '#00FF00' }); // Change color to green
+            } else {
+                // Incorrect guess
+                wrongGuesses++;
+                button.setText("✘"); // Display cross for wrong guess
+                button.setStyle({ fill: '#FF0000' }); // Change color to red
+            }
+
+            // Update the display word
+            wordText.setText(getDisplayWord());
+
+            // Update the right and wrong guesses text
+            rightGuessText.setText("Right Guesses: " + correctGuesses);
+            wrongGuessText.setText("Wrong Guesses: " + wrongGuesses);
+
+            // Update hangman drawing based on wrong guesses
+            updateHangmanDrawing();
+
+            // Check if the game is over
+            if (correctGuesses === referenceWord.length) {
+                wordText.setText("You Win! The word was: " + referenceWord);
+            } else if (wrongGuesses >= 6) {
+                wordText.setText("You Lose! The word was: " + referenceWord);
+            }
+        }
+
+        // Get the display word with underscores for unguessed letters
+        function getDisplayWord() {
+            return referenceWord
+                .split('')
+                .map(letter => (guessedLetters.includes(letter) ? letter : '_'))
+                .join(' ');
+        }
+
+        // Update hangman drawing based on number of wrong guesses
+        function updateHangmanDrawing() {
+            let hangmanDrawing = "";
+            
+            // Update drawing based on number of wrong guesses
+            const hangmanStages = [
+                "",                // 0 wrong guesses
+                "O",               // 1 wrong guess
+                "O\n|",            // 2 wrong guesses
+                "O\n|\\",          // 3 wrong guesses
+                "O\n|\\\n/",       // 4 wrong guesses
+                "O\n|\\\n/\\",     // 5 wrong guesses
+                "O\n|\\\n/\\\nX"   // 6 wrong guesses (full hangman)
+            ];
+
+            hangmanDrawing = hangmanStages[wrongGuesses];
+
+            // Update the hangman display
+            hangmanText.setText("Hangman:\n" + hangmanDrawing);
+        }
+    </script>
+</body>
+</html>
