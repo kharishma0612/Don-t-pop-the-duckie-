@@ -1,0 +1,58 @@
+.wheel-container {
+    display: flex;
+    justify-content: center;   /* Centers the wheel horizontally */
+    align-items: center;       /* Centers the wheel vertically */
+    height: 100vh;             /* Takes the full height of the viewport */
+    background-color: #f5f5f5;
+    position: relative;
+  }
+  
+  .wheel {
+    position: relative;
+    width: 300px;              /* The size of the wheel */
+    height: 300px;
+    border-radius: 50%;        /* Make it circular */
+    border: 5px solid #ddd;
+    overflow: hidden;
+  }
+  
+  .wheel-part {
+    position: absolute;
+    width: 50%;                /* Each part occupies half of the wheel */
+    height: 50%;
+    background-color: #e0e0e0;
+    transform-origin: 100% 100%;
+    border: 1px solid #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+  }
+  
+  .wheel-part:nth-child(odd) {
+    background-color: #c8c8c8;
+  }
+  
+  .wheel-part span {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .center-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Center the button in the middle of the wheel */
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .center-button:hover {
+    background-color: #0056b3;
+  }
+  
