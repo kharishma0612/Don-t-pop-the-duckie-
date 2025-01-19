@@ -40,3 +40,25 @@
 .read-the-docs {
   color: #888;
 }
+/* App.css */
+.container {
+  min-height: 100vh;
+  background-color: #f7fafc; /* equivalent to bg-gray-100 */
+  padding: 1.5rem; /* padding of 6 from Tailwind */
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6; /* equivalent to bg-blue-500 */
+  color: white;
+  border-radius: 0.375rem; /* rounded from Tailwind */
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #2563eb; /* equivalent to hover:bg-blue-700 */
+}
+
+.mt-4 {
+  margin-top: 1rem; /* margin-top of 4 from Tailwind */
+}
