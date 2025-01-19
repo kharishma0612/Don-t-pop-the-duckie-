@@ -256,14 +256,14 @@ const DuckieGame = () => {
       <div className="rectangle-29"></div>
       <img
         className="_32-officeicons-1-89729-3"
-        src="icons/bomb.png"
+        src="/icons/hint.ico"
         alt="Office Icons"
       />
       <div className="frame-1"></div>
       <div className="title">
       <img
         className="titleimg"
-        src="_32-officeicons-1-89729-30.png"
+        src="/icons/logo.png"
         alt="title"
       />
       </div>
@@ -323,7 +323,7 @@ const DuckieGame = () => {
       <div className="bombs">3</div>
       <div className="erasers">2</div>
       <div className="rectangle-33"></div>
-      <img className="coinsimg" src="group-320.svg" alt="coins" />
+      <img className="coinsimg" src="/icons/coins.ico" alt="coins" />
       
       <div className="coins">420</div>
       {/* <img className="line-8" src="line-80.svg" alt="Line 8" /> */}
@@ -331,20 +331,20 @@ const DuckieGame = () => {
       {/* <img className="ellipse-104" src="ellipse-1040.svg" alt="Ellipse 104" /> */}
       <img
         className="screenshot-2025-01-13-233312-1"
-        src="screenshot-2025-01-13-233312-10.png"
+        src="icons/duck.png"
         alt="Screenshot"
       />
       <img
         className="gui-eraser-icon-157160-2"
-        src="gui-eraser-icon-157160-20.png"
+        src="/icons/eraser.ico"
         alt="Eraser Icon"
       />
       <img
         className="console-gamepad-bomb-sports-gaming-video-sport-game-controller-icon-262437-3"
-        src="console-gamepad-bomb-sports-gaming-video-sport-game-controller-icon-262437-30.png"
+        src="/icons/bomb.ico"
         alt="Gamepad Icon"
       />
-      <img className="home-04" src="home-040.svg" alt="Home Icon" />
+      <img className="home-04" src="/icons/home.ico" alt="Home Icon" />
     </div>
   );
 };
