@@ -1,4 +1,4 @@
-/* styles.css */
+/* styles.css
 
 .container {
   max-width: 1200px;
@@ -167,42 +167,41 @@
   font-weight: bold;
   color: #f39c12;
   /* Gold color for the score */
-  text-align: center;
+  /* text-align: center;
   margin-bottom: 1rem;
 }
 
 .word-container {
   display: flex;
   /* Align children in a row */
-  justify-content: center;
+  /* justify-content: center;
   /* Center the word horizontally */
-  gap: 1rem;
+  /* gap: 1rem; */
   /* Add space between letters */
-  margin-top: 1rem;
-}
+  /* margin-top: 1rem; */
+/* }  */
 
-.letter-container {
+/* .letter-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 0.5rem;
-}
+} */
 
-.coin {
+/* .coin {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
   animation: bounce 0.5s infinite alternate;
-  /* Add a bouncing effect */
+  
 }
 
 .letter {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
-  /* Ensure letters are capitalized */
 }
 
-/* Bouncing effect for the coins */
+
 @keyframes bounce {
   from {
     transform: translateY(0);
@@ -211,4 +210,633 @@
   to {
     transform: translateY(-10px);
   }
+}  */
+.desktop-1,
+.desktop-1 * {
+  box-sizing: border-box;
 }
+.desktop-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  overflow: hidden;
+  position: relative;
+}
+.rectangle-1 {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+
+.text-element {
+  font-size: calc(1rem + 1vw); /* Dynamically adjust font size */
+  text-align: center;
+  margin: 1rem;
+}
+
+button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .ellipse-106, .ellipse-105 {
+    width: 20vw;
+  }
+
+  .text-element {
+    font-size: calc(0.8rem + 2vw);
+  }
+
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ellipse-106, .ellipse-105 {
+    width: 30vw;
+  }
+
+  .text-element {
+    font-size: calc(0.7rem + 2.5vw);
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ---------------------------------------------------- */
+.desktop-1 {
+  background: #ffffff;
+  height: 1024px;
+  position: relative;
+  /* overflow: hidden; */
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+}
+
+.home-04 {
+  width: 5vw;
+  height: 10vh;
+  position: absolute;
+  left: 2vw;
+  top: 4vh;
+  overflow: visible;
+}
+
+.rectangle-1 {
+  background: #fbe6c2;
+  width: 935px;
+  height: 1024px;
+  position: absolute;
+  left: -1px;
+  top: 0px;
+}
+.rectangle-1 {
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+}
+
+.ellipse-106 {
+  background: linear-gradient(to left, #f48b29, #f48b29),
+    linear-gradient(to left, #f48b29, #f48b29),
+    linear-gradient(to left, #f48b29, #f48b29);
+  border-radius: 50%;
+  width: 86vw; /* Scale width dynamically based on the viewport width */
+  height: 120vh; /* Scale height dynamically based on the viewport height */
+  position: absolute;
+  left: 90%; /* Center horizontally */
+  top: -8vh; /* Adjust positioning */
+  transform: translateX(-50%); /* Ensure the ellipse is centered */
+}
+
+.ellipse-105 {
+  background: linear-gradient(to left, #f0c929, #f0c929),
+    linear-gradient(to left, #f48b29, #f48b29),
+    linear-gradient(to left, #f48b29, #f48b29);
+  border-radius: 50%;
+  width: 83vw; /* Slightly smaller than .ellipse-106 */
+  height: 115vh; /* Scale dynamically while keeping proportions */
+  position: absolute;
+  left: 90%; /* Center horizontally */
+  top: -5.5vh; /* Adjust positioning */
+  transform: translateX(-50%); /* Center it horizontally */
+}
+
+.line-1 {
+  margin-top: -6vw;
+  border-style: solid;
+  border-color: #ac0d0d;
+  border-width: 0.3vw 0 0 0;
+  width: 3vw;
+  height: 0px;
+  position: absolute;
+  left: 65vw;
+  top: 50vh;
+}
+.line-2 {
+  margin-top: -6vw;
+  border-style: solid;
+  border-color: #ac0d0d;
+  border-width: 0.3vw 0 0 0;
+  width: 3vw;
+  height: 0px;
+  position: absolute;
+  left: 70vw;
+  top: 50vh;
+}
+
+.line-3 {
+  margin-top: -6vw;
+  border-style: solid;
+  border-color: #ac0d0d;
+  border-width: 0.3vw 0 0 0;
+  width: 3vw;
+  height: 0px;
+  position: absolute;
+  left: 75vw;
+  top: 50vh;
+}
+
+.line-4 {
+  margin-top: -6vw;
+  border-style: solid;
+  border-color: #ac0d0d;
+  border-width: 0.3vw 0 0 0;
+  width: 3vw;
+  height: 0px;
+  position: absolute;
+  left: 80vw;
+  top: 50vh;
+}
+
+.line-6 {
+  margin-top: -6vw;
+  border-style: solid;
+  border-color: #ac0d0d;
+  border-width: 0.3vw 0 0 0;
+  width: 3vw;
+  height: 0px;
+  position: absolute;
+  left: 85vw;
+  top: 50vh;
+}
+
+.line-7 {
+  margin-top: -6vw;
+  border-style: solid;
+  border-color: #ac0d0d;
+  border-width: 0.3vw 0 0 0;
+  width: 3vw;
+  height: 0px;
+  position: absolute;
+  left: 90vw;
+  top: 50vh;
+}
+.rectangle-2 {
+  background: #d9d9d9;
+  width: 25vw;
+  height: 50vh;
+  position: absolute;
+  left: 10vw;
+  top: 30vh;
+}
+.screenshot-2025-01-13-233312-1 {
+  width: 25vw;
+  height: 50vh;
+  position: absolute;
+  left: 10vw;
+  top: 30vh;
+  object-fit: cover;
+}
+.rectangle-29 {
+  background: #f48b29;
+  width: 25vw;
+  height: 10vh;
+  position: absolute;
+  left: 10vw;
+  top: 80vh;
+}
+._32-officeicons-1-89729-3 {
+  width: 4vw;
+  height: 8vh;
+  position: absolute;
+  left: 10vw;
+  top: 81vh;
+  transform-origin: 0 0;
+  transform: rotate(-0.359deg) scale(1, 1);
+  object-fit: cover;
+}
+.gui-eraser-icon-157160-2 {
+  width: 70.84px;
+  height: 132.21px;
+  position: absolute;
+  left: 18vw;
+  top: 81vh;
+  transform-origin: 0 0;
+  /* transform: rotate(-1.171deg) scale(1, 1); */
+  object-fit: contain;
+}
+.console-gamepad-bomb-sports-gaming-video-sport-game-controller-icon-262437-3 {
+  width: 66.74px;
+  height: 73.44px;
+  position: absolute;
+  left: 26vw;
+  top: 81vh;
+  transform-origin: 0 0;
+  /* transform: rotate(-66.938deg) scale(-1, 1); */
+  object-fit: cover;
+}
+
+.bulbs {
+  color: #ac0d0d;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  position: absolute;
+  left: 14vw;
+  top: 81vh;
+  width: 35px;
+  height: 28px;
+}
+.bombs {
+  color: #ac0d0d;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  position: absolute;
+  left: 22vw;
+  top: 81vh;
+  width: 40px;
+  height: 32px;
+}
+.erasers {
+  color: #ac0d0d;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  position: absolute;
+  left: 31vw;
+  top: 81vh;
+  width: 39px;
+  height: 25px;
+}
+.frame-1 {
+  width: 1vw;
+  height: 0.1vh;
+  position: absolute;
+  left: 30vw;
+  top: 15vh;
+  overflow: hidden;
+}
+.title {
+  font-size: 5vw; /* 5% of viewport width */
+  width: 80vw; /* Responsive width */
+}
+
+.title {
+  color: #ac0d0d;
+  text-align: center;
+  font-family: "-", sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  position: absolute;
+  left: 15vw;
+  top: 40px;
+  width: 497px;
+  height: 188px;
+}
+
+/* General Rectangle Style */
+.rectangle-3, .rectangle-4, .rectangle-5, .rectangle-24, .rectangle-6, .rectangle-25, .rectangle-7, .rectangle-26, .rectangle-8, .rectangle-27, .rectangle-9, .rectangle-28, .rectangle-10, .rectangle-17, .rectangle-11, .rectangle-18, .rectangle-12, .rectangle-19, .rectangle-13, .rectangle-20, .rectangle-14, .rectangle-21, .rectangle-15, .rectangle-22, .rectangle-16, .rectangle-23 {
+  background: #ac0d0d;
+  width: 3vw;
+  height: 3vw;
+  position: absolute;
+}
+
+/* Rectangles 3 to 9 (Top: 45vh, Left: 60vw to 90vw) */
+.rectangle-3 {
+  left: 60vw;
+  top: 45vh;
+}
+
+.rectangle-4 {
+  left: 65vw;
+  top: 45vh;
+}
+
+.rectangle-5 {
+  left: 70vw;
+  top: 45vh;
+}
+
+.rectangle-6 {
+  left: 75vw;
+  top: 45vh;
+}
+
+.rectangle-7 {
+  left: 80vw;
+  top: 45vh;
+}
+
+.rectangle-8 {
+  left: 85vw;
+  top: 45vh;
+}
+
+.rectangle-9 {
+  left: 90vw;
+  top: 45vh;
+}
+
+/* Rectangles 10 to 16 (Top: 55vh, Left: 60vw to 90vw) */
+.rectangle-10 {
+  left: 60vw;
+  top: 55vh;
+}
+
+.rectangle-11 {
+  left: 65vw;
+  top: 55vh;
+}
+
+.rectangle-12 {
+  left: 70vw;
+  top: 55vh;
+}
+
+.rectangle-13 {
+  left: 75vw;
+  top: 55vh;
+}
+
+.rectangle-14 {
+  left: 80vw;
+  top: 55vh;
+}
+
+.rectangle-15 {
+  left: 85vw;
+  top: 55vh;
+}
+
+.rectangle-16 {
+  left: 90vw;
+  top: 55vh;
+}
+
+/* Rectangles 17 to 23 (Top: 65vh, Left: 60vw to 90vw) */
+.rectangle-17 {
+  left: 60vw;
+  top: 65vh;
+}
+
+.rectangle-18 {
+  left: 65vw;
+  top: 65vh;
+}
+
+.rectangle-19 {
+  left: 70vw;
+  top: 65vh;
+}
+
+.rectangle-20 {
+  left: 75vw;
+  top: 65vh;
+}
+
+.rectangle-21 {
+  left: 80vw;
+  top: 65vh;
+}
+
+.rectangle-22 {
+  left: 85vw;
+  top: 65vh;
+}
+
+.rectangle-23 {
+  left: 90vw;
+  top: 65vh;
+}
+
+/* Rectangles 24 to 28 (Top: 75vh, Left: 65vw to 85vw) */
+.rectangle-24 {
+  left: 65vw;
+  top: 75vh;
+}
+
+.rectangle-25 {
+  left: 70vw;
+  top: 75vh;
+}
+
+.rectangle-26 {
+  left: 75vw;
+  top: 75vh;
+}
+
+.rectangle-27 {
+  left: 80vw;
+  top: 75vh;
+}
+
+.rectangle-28 {
+  left: 85vw;
+  top: 75vh;
+}
+
+/* Common styles */
+.a, .b, .c, .d, .e, .f, .g, .h, .i, .j, .k, .l, .m, .n, .o, .p, .q, .r, .s, .t, .u, .v, .w, .x, .y, .z {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Poppins-ExtraBold", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  position: absolute;
+  width: 39px;
+  height: 45px;
+}
+
+/* Letters A to G */
+.a, .b, .c, .d, .e, .f, .g {
+  top: 45vh;
+}
+
+.a {
+  left: 61vw;
+}
+.b {
+  left: 66vw;
+}
+.c {
+  left: 71vw;
+}
+.d {
+  left: 76vw;
+}
+.e {
+  left: 81vw;
+}
+.f {
+  left: 86vw;
+}
+.g {
+  left: 91vw;
+}
+
+/* Letters H to N */
+.h, .i, .j, .k, .l, .m, .n {
+  top: 55vh;
+}
+
+.h {
+  left: 61vw;
+}
+.i {
+  left: 66vw;
+}
+.j {
+  left: 71vw;
+}
+.k {
+  left: 76vw;
+}
+.l {
+  left: 81vw;
+}
+.m {
+  left: 85.5vw;
+}
+.n {
+  left: 91vw;
+}
+
+/* Letters O to U */
+.o, .p, .q, .r, .s, .t, .u {
+  top: 65vh;
+}
+
+.o {
+  left: 61vw;
+}
+.p {
+  left: 66vw;
+}
+.q {
+  left: 71vw;
+}
+.r {
+  left: 76vw;
+}
+.s {
+  left: 81vw;
+}
+.t {
+  left: 86vw;
+}
+.u {
+  left: 91vw;
+}
+
+/* Letters V to Z */
+.v, .w, .x, .y, .z {
+  top: 75vh;
+}
+
+.v {
+  left: 66vw;
+}
+.w {
+  left: 70.5vw;
+}
+.x {
+  left: 76vw;
+}
+.y {
+  left: 81vw;
+}
+.z {
+  left: 86vw;
+}
+
+.rectangle-33 {
+  background: #f48b29;
+  border-radius: 50px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 10vw;
+  height: 10vh;
+  position: absolute;
+  left: 85vw;
+  top: 5vh;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.coinsimg {
+  height: auto;
+  position: absolute;
+  left: 86vw;
+  top: 7vh;
+  overflow: visible;
+}
+
+.coins {
+  color: #ac0d0d;
+  text-align: center;
+  font-family: "Inter-ExtraBold", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  position: absolute;
+  left: 89vw;
+  top: 7vh;
+  width: 5vw;
+  height: 33px;
+}
+.line-8 {
+  width: 41.06px;
+  height: 2.27px;
+  position: absolute;
+  left: 464.77px;
+  top: 141.97px;
+  transform: translate(-38.36px, -6.17px);
+  overflow: visible;
+}
+.line-9 {
+  margin-top: -10px;
+  border-style: solid;
+  border-color: #ee2a2a;
+  border-width: 10px 0 0 0;
+  width: 43.01px;
+  height: 0px;
+  position: absolute;
+  left: 425px;
+  top: 162px;
+  transform-origin: 0 0;
+  transform: rotate(35.538deg) scale(1, 1);
+}
+.ellipse-104 {
+  width: 9.96px;
+  height: 11.11px;
+  position: absolute;
+  left: 404px;
+  top: 156px;
+  overflow: visible;
+}
+
