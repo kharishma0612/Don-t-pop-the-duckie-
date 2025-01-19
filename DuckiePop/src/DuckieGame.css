@@ -1,143 +1,214 @@
 /* styles.css */
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px;
-    text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: center;
+}
+
+.game-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.game-subheader {
+  font-size: 1rem;
+  color: gray;
+}
+
+.duckie {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 16px;
+}
+
+.pool {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #87CEEB;
+}
+
+.duckie-body {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background-color: #FFEB3B;
+  border-radius: 50%;
+}
+
+.duckie-eyes {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.duckie-eyes span {
+  width: 8px;
+  height: 8px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+
+.duckie-beak {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #FF7043;
+  border-radius: 50%;
+}
+
+.wrong-guesses {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.word-container {
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 8px;
+  margin-bottom: 32px;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: #B0BEC5;
+}
+
+.alert-circle {
+  font-size: 64px;
+  color: red;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  
-  .game-header {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 16px;
+
+  50% {
+    transform: translateY(-15px);
   }
-  
-  .game-subheader {
-    font-size: 1rem;
-    color: gray;
+}
+
+.play-again {
+  font-size: 1.5rem;
+  margin-top: 32px;
+}
+
+.play-again button {
+  padding: 12px 24px;
+  font-size: 1.25rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.play-again button:hover {
+  background-color: #388E3C;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.actions .icon-button {
+  margin-right: 0.5rem;
+  background-color: #FF7043;
+  color: white;
+  border-color: #FF7043;
+}
+
+.actions .icon-button:hover {
+  background-color: #2196F3;
+}
+
+.score-container {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f39c12;
+  /* Gold color for the score */
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.word-container {
+  display: flex;
+  /* Align children in a row */
+  justify-content: center;
+  /* Center the word horizontally */
+  gap: 1rem;
+  /* Add space between letters */
+  margin-top: 1rem;
+}
+
+.letter-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.coin {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  animation: bounce 0.5s infinite alternate;
+  /* Add a bouncing effect */
+}
+
+.letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  /* Ensure letters are capitalized */
+}
+
+/* Bouncing effect for the coins */
+@keyframes bounce {
+  from {
+    transform: translateY(0);
   }
-  
-  .duckie {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 16px;
+
+  to {
+    transform: translateY(-10px);
   }
-  
-  .pool {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #87CEEB;
-  }
-  
-  .duckie-body {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
-    background-color: #FFEB3B;
-    border-radius: 50%;
-  }
-  
-  .duckie-eyes {
-    position: absolute;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .duckie-eyes span {
-    width: 8px;
-    height: 8px;
-    background-color: black;
-    border-radius: 50%;
-    margin: 0 4px;
-  }
-  
-  .duckie-beak {
-    position: absolute;
-    top: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 16px;
-    height: 16px;
-    background-color: #FF7043;
-    border-radius: 50%;
-  }
-  
-  .wrong-guesses {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-  }
-  
-  .word-container {
-    color: black;
-    font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 8px;
-    margin-bottom: 32px;
-  }
-  
-  .keyboard {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 12px;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .button {
-    width: 40px;
-    height: 40px;
-    font-size: 1.25rem;
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .button:disabled {
-    background-color: #B0BEC5;
-  }
-  
-  .alert-circle {
-    font-size: 64px;
-    color: red;
-    animation: bounce 1s infinite;
-  }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-15px);
-    }
-  }
-  
-  .play-again {
-    font-size: 1.5rem;
-    margin-top: 32px;
-  }
-  
-  .play-again button {
-    padding: 12px 24px;
-    font-size: 1.25rem;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .play-again button:hover {
-    background-color: #388E3C;
-  }
-  
+}
