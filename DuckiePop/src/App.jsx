@@ -11,9 +11,9 @@ function App() {
     <Router>
       <div className="container">
         <Routes>
-          <Route path="/" element={<DuckieGame />} />
+          <Route path="/" element={<Home/>} />
           <Route path="/wheel" element={<Wheel />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/game" element={<DuckieGame />} />
           <Route path="/categories" element={<Categories />} />
         </Routes>
         
@@ -23,8 +23,8 @@ function App() {
           </Link>
         </div>
         <div className="mt-4">
-          <Link to="/home" className="button">
-            Go to home page
+          <Link to="/game" className="button">
+            Go to game page
           </Link>
         </div>
         <div className="mt-4">
