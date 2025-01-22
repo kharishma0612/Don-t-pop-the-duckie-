@@ -1,51 +1,177 @@
-import React, { useState, useRef } from "react";
-import "./Wheel.css"; // Add this file for styles
+
+import React, { useEffect } from "react";
+import Phaser from "phaser";
+import './Wheel.css';
 
 const Wheel = () => {
-  const [isSpinning, setIsSpinning] = useState(false);
-  const [rotation, setRotation] = useState(0);
-  const wheelRef = useRef(null);
+  useEffect(() => {
+    const bomb1 = "💣 Bomb 1";
+    const hint2 = "💡 Hint 2";
+    const coins3 = "💰 Coins 3";
+    const erase4 = "❌ Erase 4";
+    const bomb2 = "💣 Bomb 2";
+    const hint3 = "💡 Hint 3";
+    const coins4 = "💰 Coins 4";
+    const erase1 = "❌ Erase 1";
+    const bomb3 = "💣 Bomb 3";
+    const hint4 = "💡 Hint 4";
+    const coins1 = "💰 Coins 1";
+    const erase2 = "❌ Erase 2";
+    const bomb4 = "💣 Bomb 4";
+    const hint1 = "💡 Hint 1";
+    const coins2 = "💰 Coins 2";
+    const erase3 = "❌ Erase 3";
+    
+    const gameOptions = {
+      slices: 16,
+      slicePrizes: [
+        bomb1,
+        hint2,
+        coins3,
+        erase4,
+        bomb2,
+        hint3,
+        coins4,
+        erase1,
+        bomb3,
+        hint4,
+        coins1,
+        erase2,
+        bomb4,
+        hint1,
+        coins2,
+        erase3,
+      ],
+      rotationTime: 3000,
+    };
 
-  const toggleSpin = () => {
-    setIsSpinning((prev) => !prev);
-  };
+    class PlayGame extends Phaser.Scene {
+      constructor() {
+        super("PlayGame");
+      }
 
-  React.useEffect(() => {
-    let animationFrame;
+      preload() {
+        this.load.image("wheel", "/icons/wheel_of_prizes.png");
+        this.load.image("pin", "/icons/pin.png");
+        this.load.image("duck", "/icons/duck.ico");
+        this.load.image("curtains", "/icons/curtains.png");
+      }
+      create() {
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        this.wheel = this.add.sprite(centerX, centerY+50, "wheel");
+        this.wheel.setScale(0.8);
+        this.pin = this.add.sprite(centerX, centerY+50, "pin");
+        this.pin.setScale(1); 
+        this.prizeText = this.add.text(
+          centerX,
+          window.innerHeight - 35,
+          "SPIN TO WIN",
+          {
+            font: "bold 32px Rajdhani",
+            align: "center",
+            color: "white",
+          }
+        );
 
-    if (isSpinning) {
-      const rotate = () => {
-        setRotation((prevRotation) => prevRotation + 5); // Increment rotation by 5 degrees
-        animationFrame = requestAnimationFrame(rotate);
-      };
-      rotate();
-    } else {
-      cancelAnimationFrame(animationFrame);
+        this.titleText = this.add.text(
+          centerX-350,
+          centerY-150 ,
+          "LUCKIE",
+          {
+            font: "bold 32px Rajdhani",
+            align: "center",
+            color: "white",
+          }
+        );
+        this.titleText = this.add.text(
+          centerX+280,
+          centerY-150 ,
+          "DUCKIE",
+          {
+            font: "bold 32px Rajdhani",
+            align: "center",
+            color: "white",
+          }
+        );
+      
+        this.prizeText.setOrigin(0.5);
+        this.canSpin = true;
+        this.input.on("pointerdown", this.spinWheel, this);
+; 
+this.duck = this.add.sprite(centerX , centerY - 190, "duck");
+this.duck.setScale(0.8);
+this.duck.angle = -90;
+
+this.curtains = this.add.sprite(centerX , centerY+70 , "curtains");
+this.curtains.setScale(3.5);
+
+      }
+      
+      spinWheel() {
+        if (this.canSpin) {
+          this.prizeText.setText("");
+          const rounds = Phaser.Math.Between(4, 6);
+          const degrees = Phaser.Math.Between(0, 360);
+          const prize =
+            gameOptions.slices -
+            1 -
+            Math.floor(degrees/ (360 / gameOptions.slices));
+          this.canSpin = false;
+          this.tweens.add({
+            targets: [this.wheel],
+            angle: 360 * rounds + degrees,
+            duration: gameOptions.rotationTime,
+            ease: "Cubic.easeOut",
+            callbackScope: this,
+            onComplete: function () {
+              this.prizeText.setText(gameOptions.slicePrizes[prize]);
+              this.canSpin = true;
+            },
+          });
+        }
+      }
     }
 
-    return () => cancelAnimationFrame(animationFrame);
-  }, [isSpinning]);
+    const gameConfig = {
+      type: Phaser.CANVAS,
+      width: window.innerWidth,
+      height: window.innerHeight,
+      backgroundColor: 0xa94a4a,
+      scene: [PlayGame],
+    };
+
+    const game = new Phaser.Game(gameConfig);
+
+    window.focus();
+    resize();
+    window.addEventListener("resize", resize, false);
+
+    function resize() {
+      const canvas = document.querySelector("canvas");
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const windowRatio = windowWidth / windowHeight;
+      const gameRatio = game.config.width / game.config.height;
+
+      if (windowRatio < gameRatio) {
+        canvas.style.width = windowWidth + "px";
+        canvas.style.height = windowWidth / gameRatio + "px";
+      } else {
+        canvas.style.width = windowHeight * gameRatio + "px";
+        canvas.style.height = windowHeight + "px";
+      }
+    }
+
+    return () => {
+      game.destroy(true);
+    };
+  }, []);
 
   return (
-    <div className="wheel-container">
-      <div
-        className="wheel"
-        ref={wheelRef}
-        style={{ transform: `rotate(${rotation}deg)` }}
-      >
-        {Array.from({ length: 16 }).map((_, index) => (
-          <div
-            key={index}
-            className="wheel-part"
-            style={{ transform: `rotate(${index * 22.5}deg)` }}
-          >
-            <span>{index + 1}</span>
-          </div>
-        ))}
-      </div>
-      <button className="center-button" onClick={toggleSpin}>
-        {isSpinning ? "Stop" : "Start"}
-      </button>
+    <div>
+      <h1>Spin N Win</h1>
+      <div id="game-container"></div>
     </div>
   );
 };

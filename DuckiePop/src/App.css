@@ -43,7 +43,7 @@
 /* App.css */
 .container {
   min-height: 100vh;
-  background-color: #f7fafc; /* equivalent to bg-gray-100 */
+  /* background-color: #f7fafc;  */
   padding: 1.5rem; /* padding of 6 from Tailwind */
 }
 
