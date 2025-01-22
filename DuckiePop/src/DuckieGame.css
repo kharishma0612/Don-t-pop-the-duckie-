@@ -844,7 +844,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.home-04 {
+  width: 3vw;
+  height: auto;
+  position: absolute;
+  left: 2vw;
+  top: 4vh;
+  overflow: visible;
+}
 /* Basic Styling for the Container */
 .desktop-1 {
   display: flex;
@@ -853,7 +860,7 @@
   align-items: center;
   height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
-  background: #fff4e6; /* Light background for a cozy feel */
+  background: #FBE6C2; /* Light background for a cozy feel */
   overflow: hidden;
   position: relative;
 }
@@ -862,6 +869,7 @@
 .duckie-pool {
   position: relative;
   left: 5vw;
+  top: 12vh;
   margin-right: 2rem; /* Add margin to the right to separate Duckie and other content */
   flex: 1; /* Allow Duckie to take flexible space */
 }
@@ -1150,3 +1158,38 @@
   }
 }
 
+.bomb{
+  width: 2vw;
+  height: auto;
+  
+}
+
+.hint{
+  width: 2vw;
+  height: auto;
+  
+}
+
+.eraser{
+  width: 2vw;
+  height: auto;
+  
+}
+
+.title {
+  font-size: 5vw; 
+  width: 80vw;
+}
+
+.title {
+  color: #ac0d0d;
+  text-align: center;
+  font-family: "-", sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  position: absolute;
+  left: 7vw;
+  top: 40px;
+  width: 497px;
+  height: 188px;
+}

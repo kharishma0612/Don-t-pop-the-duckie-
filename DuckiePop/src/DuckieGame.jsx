@@ -456,13 +456,33 @@ const DuckieGame = () => {
     ));
   };
 
+  const getDuckieImage = () => {
+    // Change the duck image based on the wrong guesses
+    if (wrongGuesses === 0) {
+      return '/icons/duck.png';
+    } else if (wrongGuesses === 1) {
+      return '/icons/duck1.png';
+    } else if (wrongGuesses === 2) {
+      return '/icons/duck2.png';
+    } else if (wrongGuesses === 3) {
+      return '/icons/duck3.png';
+    } else {
+      return '/icons/duck4.png'; // After 4 wrong guesses
+    }
+  };
+
   return (
     <div className="desktop-1">
       {/* Left Side for Duckie */}
+      <img className="home-04" src="/icons/home.ico" alt="Home Icon" />
+      <div className="title">
+         <img className="titleimg" src="/icons/logo.png" alt="title" />
+       </div>
       <div className="duckie-pool">
-        <img className="duckie-image" src="/icons/duck.png" alt="Duckie" />
+        <img className="duckie-image" src={getDuckieImage()} alt="Duckie" />
       </div>
-
+      <img className="coinsimg" src="/icons/coins.ico" alt="Coins Icon" />
+      <div className="coins">420</div>
       {/* Right Side for Game Content */}
       <div className="game-container">
         <div className="header">
@@ -476,17 +496,18 @@ const DuckieGame = () => {
         <div className="keyboard">{renderKeyboard()}</div>
         <div className="actions">
           <button className="action-button" onClick={useHint} disabled={hints <= 0}>
-            Use Hint
+          <img className="hint" src="/icons/hint.ico" alt="Hint Icon" />
           </button>
           <button className="action-button" onClick={useBooster} disabled={boosters <= 0}>
-            Use Booster
+          
+          <img className="bomb" src="/icons/bomb.ico" alt="Bomb Icon" />
           </button>
           <button className="action-button" onClick={undoLastGuess} disabled={undoCount <= 0 || guessedLetters.length === 0}>
-            Undo Guess
+          <img className="eraser" src="/icons/eraser.ico" alt="Eraser Icon" />
           </button>
         </div>
         {gameState !== 'playing' && <div className="game-message">{gameState === 'won' ? 'You Win!' : 'You Lose!'}</div>}
-        
+
         {/* Restart Button */}
         <div className="restart-container">
           <button className="restart-button" onClick={startNewGame}>
@@ -499,4 +520,3 @@ const DuckieGame = () => {
 };
 
 export default DuckieGame;
-
