@@ -354,6 +354,8 @@ const words = ['javascript', 'react', 'hangman', 'duck', 'coding']; // Word list
 
 const DuckieGame = () => {
   // Game States
+  const words = JSON.parse(localStorage.getItem('gameWords')) || ['javascript', 'react', 'hangman', 'duck', 'coding'];
+  const selectedCategory = localStorage.getItem('selectedCategory') || 'Default';
   const [targetWord, setTargetWord] = useState('');
   const [guessedLetters, setGuessedLetters] = useState([]);
   const [wrongGuesses, setWrongGuesses] = useState(0);
