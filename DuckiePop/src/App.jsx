@@ -9,30 +9,12 @@ import "./App.css";  // Import the CSS file
 function App() {
   return (
     <Router>
-      <div className="container">
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/wheel" element={<Wheel />} />
           <Route path="/game" element={<DuckieGame />} />
           <Route path="/categories" element={<Categories />} />
         </Routes>
-        
-        <div className="mt-4">
-          <Link to="/wheel" className="button">
-            Go to Spinning Wheel
-          </Link>
-        </div>
-        <div className="mt-4">
-          <Link to="/game" className="button">
-            Go to game page
-          </Link>
-        </div>
-        <div className="mt-4">
-          <Link to="/categories" className="button">
-            Go to categories page
-          </Link>
-        </div>
-      </div>
     </Router>
   );
 }
