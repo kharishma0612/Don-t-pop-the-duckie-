@@ -51,7 +51,7 @@ const Categories = () => {
     <div className="categories-page">
       {/* Home Icon */}
       <div className="home-icon">
-      <Link to="/home" className="home-icon">
+      <Link to="/" className="home-icon">
      <img src="/icons/home.ico" alt="Home" />
       </Link>
       </div>

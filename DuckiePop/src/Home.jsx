@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { useEffect } from 'react';
 const Home = () => {
+  useEffect(() => {
+    const audio = new Audio('/music/home.mpeg'); // Path to the home page music
+    audio.loop = true; // Loop the music if desired
+    audio.play();
+
+    return () => {
+      audio.pause(); // Stop music when leaving the page
+    };
+  }, []);
   return (
     <div className="home-container p-8 h-screen bg-[#FBE6C2]">
       <div className="relative wall border-8 border-[#A67C52] h-full">
