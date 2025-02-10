@@ -858,7 +858,7 @@
   flex-direction: row; /* Change direction to row to place items side by side */
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
+  height: 90vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
   background: #FBE6C2; /* Light background for a cozy feel */
   overflow: hidden;
@@ -964,7 +964,7 @@
 }
 
 .keyboard-key {
-  padding: 1rem;
+  /* padding: 1rem; */
   font-size: 1.2rem;
   border-radius: 5px;
   background-color: #f0c929;
@@ -1192,4 +1192,74 @@
   top: 40px;
   width: 497px;
   height: 188px;
+}
+.game-message {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px;
+  color: #ff5722;
+  text-align: center;
+}
+
+.restart-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.restart-button:hover {
+  background-color: #45a049;
+}
+.word-input-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.word-input {
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.word-input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.start-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #45a049;
+}
+
+.start-button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.word-input-container .word-input,
+.word-input-container .start-button {
+  width: 100%;
+  max-width: 400px; /* Makes the elements responsive */
 }

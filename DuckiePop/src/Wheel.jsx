@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import Phaser from "phaser";
 import './Wheel.css';
+import { Link } from "react-router-dom";
 
 const Wheel = () => {
   useEffect(() => {
@@ -70,42 +71,20 @@ const Wheel = () => {
           {
             font: "bold 32px Rajdhani",
             align: "center",
-            color: "white",
+            color: "Black",
           }
         );
 
-        this.titleText = this.add.text(
-          centerX-350,
-          centerY-150 ,
-          "LUCKIE",
-          {
-            font: "bold 32px Rajdhani",
-            align: "center",
-            color: "white",
-          }
-        );
-        this.titleText = this.add.text(
-          centerX+280,
-          centerY-150 ,
-          "DUCKIE",
-          {
-            font: "bold 32px Rajdhani",
-            align: "center",
-            color: "white",
-          }
-        );
-      
         this.prizeText.setOrigin(0.5);
         this.canSpin = true;
         this.input.on("pointerdown", this.spinWheel, this);
-; 
-this.duck = this.add.sprite(centerX , centerY - 190, "duck");
-this.duck.setScale(0.8);
-this.duck.angle = -90;
+        
+        this.duck = this.add.sprite(centerX , centerY - 190, "duck");
+        this.duck.setScale(0.8);
+        this.duck.angle = -90;
 
-this.curtains = this.add.sprite(centerX , centerY+70 , "curtains");
-this.curtains.setScale(3.5);
-
+        this.curtains = this.add.sprite(centerX , centerY+70 , "curtains");
+        this.curtains.setScale(0);
       }
       
       spinWheel() {
@@ -114,9 +93,8 @@ this.curtains.setScale(3.5);
           const rounds = Phaser.Math.Between(4, 6);
           const degrees = Phaser.Math.Between(0, 360);
           const prize =
-            gameOptions.slices -
-            1 -
-            Math.floor(degrees/ (360 / gameOptions.slices));
+            gameOptions.slices - 1 -
+            Math.floor(degrees / (360 / gameOptions.slices));
           this.canSpin = false;
           this.tweens.add({
             targets: [this.wheel],
@@ -137,7 +115,7 @@ this.curtains.setScale(3.5);
       type: Phaser.CANVAS,
       width: window.innerWidth,
       height: window.innerHeight,
-      backgroundColor: 0xa94a4a,
+      backgroundColor: 0xffe4b5,
       scene: [PlayGame],
     };
 
@@ -170,7 +148,20 @@ this.curtains.setScale(3.5);
 
   return (
     <div>
-      <h1>Spin N Win</h1>
+      {/* Add Link to "/" route for the home icon */}
+      <Link to="/">
+        <img
+          src="/icons/home.ico"
+          alt="Home"
+          className="home-logo"
+        />
+      </Link>
+      
+      <img
+        src="/icons/logo.png"
+        alt="Game Title"
+        className="game-logo"
+      />
       <div id="game-container"></div>
     </div>
   );

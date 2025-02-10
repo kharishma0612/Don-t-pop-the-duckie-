@@ -23,7 +23,7 @@ const Home = () => {
 
           {/* Play Button */}
           <div className="play-btn">
-            <Link to="/game">
+            <Link to="/categories">
               <button className="bg-[#94B49F] text-white text-4xl px-16 py-6 rounded-full shadow-xl hover:scale-110 hover:shadow-2xl transition transform duration-300 ease-in-out">
                 <img
                   src="public/icons/play.ico"
@@ -37,12 +37,15 @@ const Home = () => {
 
           {/* Other Options */}
           <div className="other-options flex space-x-6">
+          <Link to="/DailyWord" >
             {/* Daily Word Button */}
             <button className="bg-[#A67C52] text-white text-2xl px-12 py-4 rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300 ease-in-out">
               Daily Word
             </button>
+            </Link>
 
             {/* 2 Player Button */}
+            <Link to="/TwoPlayer" >
             <button className="bg-[#A67C52] text-white text-2xl px-12 py-4 rounded-full shadow-lg hover:scale-105 hover:shadow-xl transition transform duration-300 ease-in-out flex items-center">
               <img
                 src="public/icons/2.ico"
@@ -51,6 +54,7 @@ const Home = () => {
               />
               Player
             </button>
+            </Link>
           </div>
         </div>
 

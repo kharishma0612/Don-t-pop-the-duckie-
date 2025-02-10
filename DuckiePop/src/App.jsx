@@ -4,7 +4,10 @@ import DuckieGame from "./DuckieGame";
 import Wheel from "./Wheel";
 import Home from "./Home";
 import Categories from "./Categories";
-import "./App.css";  // Import the CSS file
+import TwoPlayer from "./TwoPlayer";
+import DailyWord from "./DailyWord";
+import "./App.css"; 
+
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
           <Route path="/wheel" element={<Wheel />} />
           <Route path="/game" element={<DuckieGame />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/TwoPlayer" element={<TwoPlayer />} />
+          <Route path="/DailyWord" element={<DailyWord />} />
         </Routes>
     </Router>
   );

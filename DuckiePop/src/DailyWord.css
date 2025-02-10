@@ -1,0 +1,99 @@
+/* DailyWord.css */
+/* DailyWord.css */
+body{
+    background-color: #ffe4b5
+}
+.dailyword-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .home-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .dailyword-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+  }
+  
+  .category-display {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555; /* Slightly lighter text color */
+  }
+  
+  /* Container for duckie-pool and keyboard */
+  .game-content {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: flex-start; /* Align items at the top */
+    gap:200px; /* Add space between duckie-pool and keyboard */
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+  
+  .duckie-pool {
+    flex: 0 0 auto; /* Don't grow or shrink, stay at natural size */
+  }
+  
+  .duckie-image {
+    width: 300px; /* Fixed width for the duckie image */
+    height: auto;
+  }
+  
+  .keyboard {
+    padding-top:80px;
+    height : 100px;
+    flex: 1; /* Allow the keyboard to take up remaining space */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .keyboard-key {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fffe71;
+    transition: background-color 0.3s ease;
+  }
+  
+  .keyboard-key:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .keyboard-key:hover:not(:disabled) {
+    background-color: #fffe71
+  }
+  
+  .word-display {
+    padding-top:100px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+    color: #333; /* Dark text color */
+  }
+  
+  .word-display .letter {
+    color: #000; /* Black color for guessed letters */
+  }
+  
+  .game-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #d9534f; /* Red color for game over message */
+  }
