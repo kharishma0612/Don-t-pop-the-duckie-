@@ -688,7 +688,11 @@ const DuckieGame = () => {
           </button>
         </div>
         {gameState !== 'playing' && gameState !== 'initial' && (
-          <div className="game-message">{gameState === 'won' ? 'You Win!' : 'You Lose!'}</div>
+          // <div className="game-message">{gameState === 'won' ? 'You Win!' : 'You Lose!'}</div>
+          <div className="game-message">
+  {gameState === 'won' ? 'You Win!' : `You Lose! The word was: ${targetWord}`}
+</div>
+
         )}
         <div className="restart-container">
           <button className="restart-button" onClick={startNewGame}>
