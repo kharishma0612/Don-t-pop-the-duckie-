@@ -38,27 +38,27 @@
 const canvas = document.querySelector('#canvas_container');
 const ctx = canvas.getContext('2d');
 
-const spriteWidth = 471; // Frame width (1 frame from sprite sheet)
-const spriteHeight = 471; // Frame height (1 frame from sprite sheet)
+const spriteWidth = 166; // Frame width (1 frame from sprite sheet)
+const spriteHeight = 166; // Frame height (1 frame from sprite sheet)
 
 const CANVAS_WIDTH = canvas.width = spriteWidth; // Match canvas to frame dimensions
 const CANVAS_HEIGHT = canvas.height = spriteHeight;
 
 const playerImg = new Image();
-playerImg.src = 'sprite_sheet.png'; // Use the correct file name
+playerImg.src = 'dance_sprite.png'; // Use the correct file name
 
 let frameX = 0;
 let frameY = 0;
 let initFrame = 0;
-const totalFrames = 16; // Total frames in sprite sheet
-const staggerFrame = 40; // Adjust for desired animation speed
+const totalFrames = 9; // Total frames in sprite sheet
+const staggerFrame = 30; // Adjust for desired animation speed
 
 function animate() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-    let position = Math.floor(initFrame / staggerFrame) % totalFrames; // Cycle through all 16 frames
-    frameX = position % 4; // 4 columns in the sprite sheet
-    frameY = Math.floor(position / 4); // Calculate the row
+    let position = Math.floor(initFrame / staggerFrame) % totalFrames; // Cycle through all 9 frames
+    frameX = position % 3; // 3 columns in the sprite sheet
+    frameY = Math.floor(position / 3); // Corrected to 3, since we have 3 rows
 
     ctx.drawImage(
         playerImg,

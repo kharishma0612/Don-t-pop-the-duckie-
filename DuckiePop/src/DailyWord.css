@@ -1,8 +1,8 @@
-/* DailyWord.css */
-/* DailyWord.css */
+
 body{
     background-color: #ffe4b5
 }
+/*
 .dailyword-container {
     display: flex;
     flex-direction: column;
@@ -10,49 +10,50 @@ body{
     padding: 20px;
     text-align: center;
   }
-  
+  */
   .home-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 20px;
+    width: 3vw;
+    height: auto;
+    position: absolute;
+    left: 2vw;
+    top: 4vh;
+    overflow: visible;
   }
-  
   .dailyword-title {
+    padding-top:40px;
     font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333; /* Dark text color */
-  }
+    color: #333; 
+  }/*
   
   .category-display {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #555; /* Slightly lighter text color */
+    color: #555; 
   }
   
-  /* Container for duckie-pool and keyboard */
   .game-content {
     display: flex;
-    justify-content: center; /* Center the items horizontally */
-    align-items: flex-start; /* Align items at the top */
-    gap:200px; /* Add space between duckie-pool and keyboard */
+    justify-content: center; 
+    align-items: flex-start;
+    gap:200px;
     width: 100%;
     max-width: 800px;
     margin-bottom: 20px;
   }
   
   .duckie-pool {
-    flex: 0 0 auto; /* Don't grow or shrink, stay at natural size */
+    flex: 0 0 auto; 
   }
   
   .duckie-image {
-    width: 300px; /* Fixed width for the duckie image */
+    width: 300px; 
     height: auto;
   }
   
   .keyboard {
     padding-top:80px;
     height : 100px;
-    flex: 1; /* Allow the keyboard to take up remaining space */
+    flex: 1; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -84,16 +85,90 @@ body{
     font-size: 1.5rem;
     margin-bottom: 20px;
     letter-spacing: 10px;
-    color: #333; /* Dark text color */
+    color: #333;
   }
   
   .word-display .letter {
-    color: #000; /* Black color for guessed letters */
+    color: #000; 
   }
   
   .game-message {
     font-size: 1.5rem;
     font-weight: bold;
     margin-top: 20px;
-    color: #d9534f; /* Red color for game over message */
-  }
+    color: #d9534f;
+  } */
+
+  /* DailyWord.css */
+.dailyword-container {
+  text-align: center;
+  padding: 0px;
+}
+
+.category-display {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* Space between video and keyboard */
+  /* margin-top: 10px; */
+}
+
+.duckie-video {
+  width: 500px; /* Adjust as needed */
+  height: auto;
+  border-radius: 10px;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top:100px;
+  justify-content: center;
+  max-width: 500px; /* Adjust as needed */
+}
+
+.keyboard-key {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.keyboard-key:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.word-display {
+  font-size: 2rem;
+  margin: 20px 0;
+  letter-spacing: 10px;
+}
+
+.game-message {
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.reset-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.reset-button:hover {
+  background-color: #45a049;
+}

@@ -42,7 +42,6 @@ const Categories = () => {
       // Store the selected words and category in localStorage
       localStorage.setItem('gameWords', JSON.stringify(selectedCategory.words));
       localStorage.setItem('selectedCategory', selectedCategory.name);
-      // Call the parent component's handler instead of using navigation
       window.location.href = '/game';
     }
   };
